@@ -1,0 +1,641 @@
+index.html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rafiki House</title>
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Load Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    /* Rafiki House Design System - Sophisticated Navy & Gold Palette */
+    :root {
+      --rafiki-deep-navy: 217 91% 18%;
+      --rafiki-warm-gold: 45 93% 58%;
+      --rafiki-navy-variant: 220 39% 25%;
+      --rafiki-muted-navy: 215 25% 27%;
+      --rafiki-light-gold: 48 100% 78%;
+      --rafiki-rich-gold: 43 87% 48%;
+    }
+
+    .bg-rafiki-gradient {
+      background: linear-gradient(135deg, hsl(var(--rafiki-deep-navy)) 0%, hsl(var(--rafiki-navy-variant)) 100%);
+    }
+
+    .bg-gold-gradient {
+      background: linear-gradient(135deg, hsl(var(--rafiki-warm-gold)) 0%, hsl(var(--rafiki-rich-gold)) 100%);
+    }
+
+    .text-gradient {
+      background: linear-gradient(135deg, hsl(var(--rafiki-warm-gold)), hsl(var(--rafiki-light-gold)));
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    .glass {
+      @apply bg-slate-800/60 backdrop-blur-sm border border-slate-700/50;
+    }
+
+    .smooth-container {
+      @apply rounded-3xl shadow-2xl transition-all duration-500;
+    }
+
+    .hover-lift:hover {
+      @apply scale-105 -translate-y-1;
+    }
+
+    @keyframes scroll {
+      0% { transform: translateX(0); }
+      100% { transform: translateX(calc(-300px * 10 - 24px * 9)); }
+    }
+
+    .animate-scroll {
+      animation: scroll 30s linear infinite;
+    }
+
+    .animate-scroll:hover {
+      animation-play-state: paused;
+    }
+  </style>
+</head>
+<body class="font-sans antialiased bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 text-white min-h-screen">
+
+<header class="sticky top-0 z-50 px-6 py-4 bg-slate-900/80 backdrop-blur border-b border-slate-800">
+  <div class="max-w-7xl mx-auto flex items-center justify-between">
+    <div class="flex items-center space-x-3">
+      <img src="logo.jpeg?v=2000" alt="Rafiki House Logo" class="w-16 h-16 md:w-20 md:h-20 rounded-full object-cover ring-2 ring-amber-400" />
+      <span class="text-amber-400 font-bold text-xl md:text-2xl tracking-tight">Rafiki House</span>
+    </div>
+    <nav class="hidden md:flex items-center space-x-6">
+      <a href="#" class="px-4 py-2 rounded-full hover:bg-slate-800/30 transition">🏠 Homes</a>
+      <a href="https://feedback-form-topaz.vercel.app/" target="_blank" rel="noopener noreferrer" class="flex items-center space-x-2 px-4 py-2 rounded-full hover:bg-slate-800/30 transition">
+        <span class="bg-amber-400 text-slate-900 text-xs px-2 py-0.5 rounded-full font-bold">NEW</span>
+        <span class="text-slate-300">✨ Experiences</span>
+      </a>
+      <a href="#" class="flex items-center space-x-2 px-4 py-2 rounded-full hover:bg-slate-800/30 transition">
+        <span class="bg-amber-400 text-slate-900 text-xs px-2 py-0.5 rounded-full font-bold">NEW</span>
+        <span class="text-slate-300">🛎️ Services</span>
+      </a>
+    </nav>
+    <div class="hidden md:flex items-center space-x-4">
+      <button class="text-slate-300 hover:text-amber-400 transition font-medium">Favourite</button>
+      <div class="w-8 h-8 bg-slate-700 rounded-full hover:bg-slate-600 transition"></div>
+      <button class="p-2 hover:bg-slate-800 rounded-full transition" aria-label="Menu">
+        <div class="w-4 h-4 grid grid-cols-3 gap-0.5">
+          <div class="w-1 h-1 bg-slate-400 rounded-full"></div>
+          <div class="w-1 h-1 bg-slate-400 rounded-full"></div>
+          <div class="w-1 h-1 bg-slate-400 rounded-full"></div>
+          <div class="w-1 h-1 bg-slate-400 rounded-full"></div>
+          <div class="w-1 h-1 bg-slate-400 rounded-full"></div>
+          <div class="w-1 h-1 bg-slate-400 rounded-full"></div>
+          <div class="w-1 h-1 bg-slate-400 rounded-full"></div>
+          <div class="w-1 h-1 bg-slate-400 rounded-full"></div>
+          <div class="w-1 h-1 bg-slate-400 rounded-full"></div>
+        </div>
+      </button>
+    </div>
+  </div>
+</header>
+
+<section class="px-6 py-12">
+  <div class="max-w-4xl mx-auto text-center mb-12">
+    <h1 class="text-5xl md:text-6xl font-bold text-amber-400 mb-4 tracking-tight drop-shadow-md">RAFIKI HOUSE</h1>
+    <div class="w-24 h-1 bg-gradient-to-r from-amber-400 to-yellow-500 mx-auto mb-6 animate-pulse"></div>
+    <p class="text-xl text-slate-300 max-w-2xl mx-auto">Experience the finest culinary journey with our carefully curated luxury stays</p>
+  </div>
+  <div class="max-w-4xl mx-auto mt-8">
+    <form action="/api/bookings" method="POST" class="bg-slate-800/60 backdrop-blur-sm rounded-3xl p-2 shadow-2xl border border-slate-700 grid grid-cols-1 md:grid-cols-4 gap-2">
+      <a href="https://maps.app.goo.gl/ZgAi4ovMKsHJvftT9?g_st=aw" target="_blank" rel="noopener noreferrer" class="block bg-slate-700/50 rounded-2xl p-4 hover:bg-slate-700/70 transition-all duration-300 cursor-pointer focus:outline-none focus:ring focus:ring-amber-400">
+        <div class="text-slate-400 text-sm font-medium mb-1">Location</div>
+        <div class="text-white font-medium">Nanyuki, Kenya</div>
+      </a>
+      <div class="bg-slate-700/50 rounded-2xl p-4 hover:bg-slate-700/70 transition-all duration-300 focus:outline-none focus:ring focus:ring-amber-400">
+        <div class="text-slate-400 text-sm font-medium mb-1">Check in</div>
+        <input type="date" name="checkin" required class="w-full bg-transparent text-white font-medium focus:outline-none" />
+      </div>
+      <div class="bg-slate-700/50 rounded-2xl p-4 hover:bg-slate-700/70 transition-all duration-300 focus:outline-none focus:ring focus:ring-amber-400">
+        <div class="text-slate-400 text-sm font-medium mb-1">Check out</div>
+        <input type="date" name="checkout" required class="w-full bg-transparent text-white font-medium focus:outline-none" />
+      </div>
+      <div class="bg-slate-700/50 rounded-2xl p-4 relative">
+        <div class="text-slate-400 text-sm font-medium mb-1">Guests</div>
+        <input type="number" name="guests" min="1" placeholder="Add guests" required class="w-full bg-transparent text-white font-medium focus:outline-none" />
+        <button type="submit" class="absolute right-4 top-1/2 transform -translate-y-1/2 w-12 h-12 bg-gradient-to-r from-amber-400 to-yellow-500 rounded-full flex items-center justify-center hover:scale-105 transition-transform duration-300 shadow-lg" aria-label="Search">
+          <svg class="w-5 h-5 text-slate-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+          </svg>
+        </button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- Scrolling Video Section -->
+<section class="py-16 overflow-hidden">
+  <div class="relative">
+    <div class="flex animate-scroll space-x-6 px-6" style="animation: scroll 30s linear infinite;">
+
+      <!-- Property Card -->
+      <div class="flex-shrink-0 w-72 group cursor-pointer">
+        <div class="bg-slate-800/60 backdrop-blur-sm rounded-3xl overflow-hidden shadow-2xl border border-slate-700 hover:border-amber-400/50 transition-all duration-500 hover:scale-105">
+          <div class="relative h-48 overflow-hidden">
+            <img src="3.jpeg" alt="Luxury Living Room Suite" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+          </div>
+          <div class="p-6">
+            <h3 class="text-white font-semibold text-lg mb-2 group-hover:text-amber-400 transition-colors duration-300">Luxury Living Room Suite</h3>
+            <p class="text-slate-400 text-sm mb-3">Available now</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Repeat for other property cards -->
+      <div class="flex-shrink-0 w-72 group cursor-pointer">
+        <div class="bg-slate-800/60 backdrop-blur-sm rounded-3xl overflow-hidden shadow-2xl border border-slate-700 hover:border-amber-400/50 transition-all duration-500 hover:scale-105">
+          <div class="relative h-48 overflow-hidden">
+            <img src="29.jpeg" alt="A bright living room with cozy seating for unwinding" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+          </div>
+          <div class="p-6">
+            <h3 class="text-white font-semibold text-lg mb-2 group-hover:text-amber-400 transition-colors duration-300">Cozy Cat-Friendly Apartment</h3>
+            <p class="text-slate-400 text-sm mb-3">Available now</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex-shrink-0 w-72 group cursor-pointer">
+        <div class="bg-slate-800/60 backdrop-blur-sm rounded-3xl overflow-hidden shadow-2xl border border-slate-700 hover:border-amber-400/50 transition-all duration-500 hover:scale-105">
+          <div class="relative h-48 overflow-hidden">
+            <img src="26.jpeg" alt=" A restful bedroom with a plush bed and crisp linens" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+          </div>
+          <div class="p-6">
+            <h3 class="text-white font-semibold text-lg mb-2 group-hover:text-amber-400 transition-colors duration-300">Cozy Cat-Friendly Apartment</h3>
+            <p class="text-slate-400 text-sm mb-3">Available now</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex-shrink-0 w-72 group cursor-pointer">
+        <div class="bg-slate-800/60 backdrop-blur-sm rounded-3xl overflow-hidden shadow-2xl border border-slate-700 hover:border-amber-400/50 transition-all duration-500 hover:scale-105">
+          <div class="relative h-48 overflow-hidden">
+            <img src="22.jpeg" alt="A neat dining area with comfortable seating for shared meals" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+          </div>
+          <div class="p-6">
+            <h3 class="text-white font-semibold text-lg mb-2 group-hover:text-amber-400 transition-colors duration-300">Cozy Cat-Friendly Apartment</h3>
+            <p class="text-slate-400 text-sm mb-3">Available now</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex-shrink-0 w-72 group cursor-pointer">
+        <div class="bg-slate-800/60 backdrop-blur-sm rounded-3xl overflow-hidden shadow-2xl border border-slate-700 hover:border-amber-400/50 transition-all duration-500 hover:scale-105">
+          <div class="relative h-48 overflow-hidden">
+            <img src="17.jpeg" alt="Cozy room with a plush bed, fresh linens, and a calm atmosphere" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+          </div>
+          <div class="p-6">
+            <h3 class="text-white font-semibold text-lg mb-2 group-hover:text-amber-400 transition-colors duration-300">Cozy Cat-Friendly Apartment</h3>
+            <p class="text-slate-400 text-sm mb-3">Available now</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex-shrink-0 w-72 group cursor-pointer">
+        <div class="bg-slate-800/60 backdrop-blur-sm rounded-3xl overflow-hidden shadow-2xl border border-slate-700 hover:border-amber-400/50 transition-all duration-500 hover:scale-105">
+          <div class="relative h-48 overflow-hidden">
+            <img src="15.jpeg" alt="Fresh, tasty meals prepared daily with local ingredients" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+          </div>
+          <div class="p-6">
+            <h3 class="text-white font-semibold text-lg mb-2 group-hover:text-amber-400 transition-colors duration-300">Cozy Cat-Friendly Apartment</h3>
+            <p class="text-slate-400 text-sm mb-3">Available now</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex-shrink-0 w-72 group cursor-pointer">
+        <div class="bg-slate-800/60 backdrop-blur-sm rounded-3xl overflow-hidden shadow-2xl border border-slate-700 hover:border-amber-400/50 transition-all duration-500 hover:scale-105">
+          <div class="relative h-48 overflow-hidden">
+            <img src="15.jpeg" alt="Relaxing lounge with comfortable sofas and warm décor" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+          </div>
+          <div class="p-6">
+            <h3 class="text-white font-semibold text-lg mb-2 group-hover:text-amber-400 transition-colors duration-300">Cozy Cat-Friendly Apartment</h3>
+            <p class="text-slate-400 text-sm mb-3">Available now</p>
+          </div>
+        </div>
+      </div>
+      
+          <div class="flex-shrink-0 w-72 group cursor-pointer">
+        <div class="bg-slate-800/60 backdrop-blur-sm rounded-3xl overflow-hidden shadow-2xl border border-slate-700 hover:border-amber-400/50 transition-all duration-500 hover:scale-105">
+          <div class="relative h-48 overflow-hidden">
+            <img src="12.jpeg" alt="Tasty, wholesome meals made fresh every day" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+          </div>
+          <div class="p-6">
+            <h3 class="text-white font-semibold text-lg mb-2 group-hover:text-amber-400 transition-colors duration-300">Cozy Cat-Friendly Apartment</h3>
+            <p class="text-slate-400 text-sm mb-3">Available now</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex-shrink-0 w-72 group cursor-pointer">
+        <div class="bg-slate-800/60 backdrop-blur-sm rounded-3xl overflow-hidden shadow-2xl border border-slate-700 hover:border-amber-400/50 transition-all duration-500 hover:scale-105">
+          <div class="relative h-48 overflow-hidden">
+            <img src="11.jpeg" alt="A neat dining area with comfortable seating for shared meals" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+          </div>
+          <div class="p-6">
+            <h3 class="text-white font-semibold text-lg mb-2 group-hover:text-amber-400 transition-colors duration-300">Cozy Cat-Friendly Apartment</h3>
+            <p class="text-slate-400 text-sm mb-3">Available now</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex-shrink-0 w-72 group cursor-pointer">
+        <div class="bg-slate-800/60 backdrop-blur-sm rounded-3xl overflow-hidden shadow-2xl border border-slate-700 hover:border-amber-400/50 transition-all duration-500 hover:scale-105">
+          <div class="relative h-48 overflow-hidden">
+            <img src="22.jpeg" alt="Your home away from home" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+          </div>
+          <div class="p-6">
+            <h3 class="text-white font-semibold text-lg mb-2 group-hover:text-amber-400 transition-colors duration-300">Cozy Cat-Friendly Apartment</h3>
+            <p class="text-slate-400 text-sm mb-3">Available now</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex-shrink-0 w-72 group cursor-pointer">
+        <div class="bg-slate-800/60 backdrop-blur-sm rounded-3xl overflow-hidden shadow-2xl border border-slate-700 hover:border-amber-400/50 transition-all duration-500 hover:scale-105">
+          <div class="relative h-48 overflow-hidden">
+            <img src="26.jpeg" alt="All ready for you to enjoy" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+          </div>
+          <div class="p-6">
+            <h3 class="text-white font-semibold text-lg mb-2 group-hover:text-amber-400 transition-colors duration-300">Cozy Cat-Friendly Apartment</h3>
+            <p class="text-slate-400 text-sm mb-3">Available now</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex-shrink-0 w-72 group cursor-pointer">
+        <div class="bg-slate-800/60 backdrop-blur-sm rounded-3xl overflow-hidden shadow-2xl border border-slate-700 hover:border-amber-400/50 transition-all duration-500 hover:scale-105">
+          <div class="relative h-48 overflow-hidden">
+            <img src="29.jpeg" alt="Cozy lounge for relaxing together" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+          </div>
+          <div class="p-6">
+            <h3 class="text-white font-semibold text-lg mb-2 group-hover:text-amber-400 transition-colors duration-300">Cozy Cat-Friendly Apartment</h3>
+            <p class="text-slate-400 text-sm mb-3">Available now</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex-shrink-0 w-72 group cursor-pointer">
+        <div class="bg-slate-800/60 backdrop-blur-sm rounded-3xl overflow-hidden shadow-2xl border border-slate-700 hover:border-amber-400/50 transition-all duration-500 hover:scale-105">
+          <div class="relative h-48 overflow-hidden">
+            <img src="27.jpeg" alt="Soft bed, crisp sheets, peaceful sleep" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+          </div>
+          <div class="p-6">
+            <h3 class="text-white font-semibold text-lg mb-2 group-hover:text-amber-400 transition-colors duration-300">Cozy Cat-Friendly Apartment</h3>
+            <p class="text-slate-400 text-sm mb-3">Available now</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex-shrink-0 w-72 group cursor-pointer">
+        <div class="bg-slate-800/60 backdrop-blur-sm rounded-3xl overflow-hidden shadow-2xl border border-slate-700 hover:border-amber-400/50 transition-all duration-500 hover:scale-105">
+          <div class="relative h-48 overflow-hidden">
+            <img src="24.jpeg" alt="Soft bed, crisp sheets, peaceful sleep" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+          </div>
+          <div class="p-6">
+            <h3 class="text-white font-semibold text-lg mb-2 group-hover:text-amber-400 transition-colors duration-300">Cozy Cat-Friendly Apartment</h3>
+            <p class="text-slate-400 text-sm mb-3">Available now</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex-shrink-0 w-72 group cursor-pointer">
+        <div class="bg-slate-800/60 backdrop-blur-sm rounded-3xl overflow-hidden shadow-2xl border border-slate-700 hover:border-amber-400/50 transition-all duration-500 hover:scale-105">
+          <div class="relative h-48 overflow-hidden">
+            <img src="25.jpeg" alt="Bright, airy, and furnished for comfort" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+          </div>
+          <div class="p-6">
+            <h3 class="text-white font-semibold text-lg mb-2 group-hover:text-amber-400 transition-colors duration-300">Cozy Cat-Friendly Apartment</h3>
+            <p class="text-slate-400 text-sm mb-3">Available now</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+<!-- Game Drives and Hike Section -->
+<section class="py-16 px-6">
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-bold text-amber-400 mb-4">Game Drives & Hike by Rafiki</h2>
+      <p class="text-slate-300 max-w-2xl mx-auto">
+        Embark on unforgettable adventures with our expert guides through Kenya's spectacular wilderness
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+      <!-- Game Drives Card -->
+      <div class="bg-slate-800/60 backdrop-blur-sm rounded-3xl overflow-hidden shadow-2xl border border-slate-700 hover:border-amber-400/50 transition-all duration-500 hover:scale-105">
+        <div class="relative h-64 overflow-hidden">
+          <img 
+            src="https://pub-cdn.sider.ai/u/U0GVH7ZLG00/web-coder/686613860385cdf9805ddf14/resource/a6fbf2f1-4983-48e2-b3be-06598440be02.jpg"
+            alt="Safari Game Drive"
+            class="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
+          <div class="absolute bottom-4 left-4">
+            <span class="bg-amber-400 text-slate-900 text-xs px-3 py-1 rounded-full font-bold">
+              🦁 WILDLIFE
+            </span>
+          </div>
+        </div>
+        <div class="p-6">
+          <h3 class="text-white font-semibold text-xl mb-3">Safari Game Drives</h3>
+          <p class="text-slate-400 text-sm mb-4">
+            Experience the thrill of spotting the Big Five and other magnificent wildlife in their natural habitat. Our experienced guides will take you on morning and evening game drives through Kenya's premier conservancies.
+          </p>
+          <div class="flex items-center justify-between mb-4">
+            <div class="flex items-center space-x-2">
+              <span class="text-amber-400">⏰</span>
+              <span class="text-slate-300 text-sm">4-6 hours</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <span class="text-amber-400">👥</span>
+              <span class="text-slate-300 text-sm">Max 6 guests</span>
+            </div>
+          </div>
+          <div class="flex items-center justify-between">
+            <div class="text-amber-400 font-bold text-lg">$120/person</div>
+            <button class="bg-gradient-to-r from-amber-400 to-yellow-500 text-slate-900 px-4 py-2 rounded-full font-medium hover:scale-105 transition-transform duration-300">
+              Book Now
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hiking Card -->
+      <div class="bg-slate-800/60 backdrop-blur-sm rounded-3xl overflow-hidden shadow-2xl border border-slate-700 hover:border-amber-400/50 transition-all duration-500 hover:scale-105">
+        <div class="relative h-64 overflow-hidden">
+          <img 
+            src="https://pub-cdn.sider.ai/u/U0GVH7ZLG00/web-coder/686613860385cdf9805ddf14/resource/618d989b-84c7-41a7-a464-5c99f05547c8.jpg"
+            alt="Mountain Hiking"
+            class="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
+          />
+          <div class="absolute inset-0 bg-gradient-to-t from-slate-900/80 to-transparent"></div>
+          <div class="absolute bottom-4 left-4">
+            <span class="bg-amber-400 text-slate-900 text-xs px-3 py-1 rounded-full font-bold">
+              🏔️ ADVENTURE
+            </span>
+          </div>
+        </div>
+        <div class="p-6">
+          <h3 class="text-white font-semibold text-xl mb-3">Mountain Hiking</h3>
+          <p class="text-slate-400 text-sm mb-4">
+            Discover breathtaking trails around Mount Kenya and the Aberdare ranges. From gentle nature walks to challenging summit attempts, we offer hiking experiences for every fitness level.
+          </p>
+          <div class="flex items-center justify-between mb-4">
+            <div class="flex items-center space-x-2">
+              <span class="text-amber-400">⏰</span>
+              <span class="text-slate-300 text-sm">2-8 hours</span>
+            </div>
+            <div class="flex items-center space-x-2">
+              <span class="text-amber-400">🥾</span>
+              <span class="text-slate-300 text-sm">All levels</span>
+            </div>
+          </div>
+          <div class="flex items-center justify-between">
+            <div class="text-amber-400 font-bold text-lg">$80/person</div>
+            <button class="bg-gradient-to-r from-amber-400 to-yellow-500 text-slate-900 px-4 py-2 rounded-full font-medium hover:scale-105 transition-transform duration-300">
+              Book Now
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Additional Features -->
+    <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-6">
+      <div class="bg-slate-800/40 backdrop-blur-sm rounded-2xl p-6 border border-slate-700/50 text-center">
+        <div class="text-amber-400 text-2xl mb-3">🌅</div>
+        <h4 class="text-white font-semibold mb-2">Sunrise & Sunset Tours</h4>
+        <p class="text-slate-400 text-sm">Witness magical moments as the African sun paints the sky</p>
+      </div>
+      <div class="bg-slate-800/40 backdrop-blur-sm rounded-2xl p-6 border border-slate-700/50 text-center">
+        <div class="text-amber-400 text-2xl mb-3">📸</div>
+        <h4 class="text-white font-semibold mb-2">Photography Tours</h4>
+        <p class="text-slate-400 text-sm">Capture stunning wildlife and landscapes with expert guidance</p>
+      </div>
+      <div class="bg-slate-800/40 backdrop-blur-sm rounded-2xl p-6 border border-slate-700/50 text-center">
+        <div class="text-amber-400 text-2xl mb-3">🏕️</div>
+        <h4 class="text-white font-semibold mb-2">Bush Camping</h4>
+        <p class="text-slate-400 text-sm">Sleep under the stars in the heart of the wilderness</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Rafiki House Collection Section -->
+  <main class="flex-grow py-16 px-6">
+    <div class="max-w-7xl mx-auto">
+      <div class="text-center mb-12">
+        <h1 class="text-4xl font-bold text-amber-400 mb-4">Rafiki House Collection</h1>
+        <p class="text-slate-300 max-w-2xl mx-auto">
+          Choose your perfect stay from our unique selection of cozy and stylish houses.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- House Card Template -->
+        <a href="amaranth.html" class="block bg-slate-800/60 backdrop-blur-sm rounded-3xl overflow-hidden shadow-2xl border border-slate-700 hover:border-amber-400/50 transition hover:scale-105 group">
+          <div class="relative h-64 overflow-hidden">
+            <img src="3.jpeg" alt="Amaranth House" class="w-full h-full object-cover group-hover:scale-110 transition duration-700"/>
+          </div>
+          <div class="p-6">
+            <h3 class="text-white font-semibold text-xl mb-2 group-hover:text-amber-400 transition">Amaranth House</h3>
+            <p class="text-slate-400 text-sm mb-4">From $120/night</p>
+            <button class="bg-gradient-to-r from-amber-400 to-yellow-500 text-slate-900 px-4 py-2 rounded-full font-medium flex items-center space-x-2 hover:scale-105 transition">
+              <span>Book Now</span>
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 3a1 1 0 011.707-.707l6 6a1 1 0 010 1.414l-6 6A1 1 0 0110 15v-3H4a1 1 0 010-2h6V3z"/></svg>
+            </button>
+          </div>
+        </a>
+
+        <!-- Duplicate for each house -->
+        <a href="citronella.html" class="block bg-slate-800/60 backdrop-blur-sm rounded-3xl overflow-hidden shadow-2xl border border-slate-700 hover:border-amber-400/50 transition hover:scale-105 group">
+          <div class="relative h-64 overflow-hidden">
+            <img src="15.jpeg" alt="Citronella House" class="w-full h-full object-cover group-hover:scale-110 transition duration-700"/>
+          </div>
+          <div class="p-6">
+            <h3 class="text-white font-semibold text-xl mb-2 group-hover:text-amber-400 transition">Citronella House</h3>
+            <p class="text-slate-400 text-sm mb-4">From $130/night</p>
+            <button class="bg-gradient-to-r from-amber-400 to-yellow-500 text-slate-900 px-4 py-2 rounded-full font-medium flex items-center space-x-2 hover:scale-105 transition">
+              <span>Book Now</span>
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 3a1 1 0 011.707-.707l6 6a1 1 0 010 1.414l-6 6A1 1 0 0110 15v-3H4a1 1 0 010-2h6V3z"/></svg>
+            </button>
+          </div>
+        </a>
+
+        <!-- Add the rest -->
+        <a href="paprika.html" class="block bg-slate-800/60 backdrop-blur-sm rounded-3xl overflow-hidden shadow-2xl border border-slate-700 hover:border-amber-400/50 transition hover:scale-105 group">
+          <div class="relative h-64 overflow-hidden">
+            <img src="16.jpeg" alt="Paprika House" class="w-full h-full object-cover group-hover:scale-110 transition duration-700"/>
+          </div>
+          <div class="p-6">
+            <h3 class="text-white font-semibold text-xl mb-2 group-hover:text-amber-400 transition">Paprika House</h3>
+            <p class="text-slate-400 text-sm mb-4">From $125/night</p>
+            <button class="bg-gradient-to-r from-amber-400 to-yellow-500 text-slate-900 px-4 py-2 rounded-full font-medium flex items-center space-x-2 hover:scale-105 transition">
+              <span>Book Now</span>
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 3a1 1 0 011.707-.707l6 6a1 1 0 010 1.414l-6 6A1 1 0 0110 15v-3H4a1 1 0 010-2h6V3z"/></svg>
+            </button>
+          </div>
+        </a>
+
+        <a href="oregano.html" class="block bg-slate-800/60 backdrop-blur-sm rounded-3xl overflow-hidden shadow-2xl border border-slate-700 hover:border-amber-400/50 transition hover:scale-105 group">
+          <div class="relative h-64 overflow-hidden">
+            <img src="17.jpeg" alt="Oregano House" class="w-full h-full object-cover group-hover:scale-110 transition duration-700"/>
+          </div>
+          <div class="p-6">
+            <h3 class="text-white font-semibold text-xl mb-2 group-hover:text-amber-400 transition">Oregano House</h3>
+            <p class="text-slate-400 text-sm mb-4">From $140/night</p>
+            <button class="bg-gradient-to-r from-amber-400 to-yellow-500 text-slate-900 px-4 py-2 rounded-full font-medium flex items-center space-x-2 hover:scale-105 transition">
+              <span>Book Now</span>
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 3a1 1 0 011.707-.707l6 6a1 1 0 010 1.414l-6 6A1 1 0 0110 15v-3H4a1 1 0 010-2h6V3z"/></svg>
+            </button>
+          </div>
+        </a>
+
+        <a href="rosmarino.html" class="block bg-slate-800/60 backdrop-blur-sm rounded-3xl overflow-hidden shadow-2xl border border-slate-700 hover:border-amber-400/50 transition hover:scale-105 group">
+          <div class="relative h-64 overflow-hidden">
+            <img src="11.jpeg" alt="Rosmarino House" class="w-full h-full object-cover group-hover:scale-110 transition duration-700"/>
+          </div>
+          <div class="p-6">
+            <h3 class="text-white font-semibold text-xl mb-2 group-hover:text-amber-400 transition">Rosmarino House</h3>
+            <p class="text-slate-400 text-sm mb-4">From $135/night</p>
+            <button class="bg-gradient-to-r from-amber-400 to-yellow-500 text-slate-900 px-4 py-2 rounded-full font-medium flex items-center space-x-2 hover:scale-105 transition">
+              <span>Book Now</span>
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 3a1 1 0 011.707-.707l6 6a1 1 0 010 1.414l-6 6A1 1 0 0110 15v-3H4a1 1 0 010-2h6V3z"/></svg>
+            </button>
+          </div>
+        </a>
+
+        <a href="ginger.html" class="block bg-slate-800/60 backdrop-blur-sm rounded-3xl overflow-hidden shadow-2xl border border-slate-700 hover:border-amber-400/50 transition hover:scale-105 group">
+          <div class="relative h-64 overflow-hidden">
+            <img src="3.jpeg" alt="Ginger House" class="w-full h-full object-cover group-hover:scale-110 transition duration-700"/>
+          </div>
+          <div class="p-6">
+            <h3 class="text-white font-semibold text-xl mb-2 group-hover:text-amber-400 transition">Ginger House</h3>
+            <p class="text-slate-400 text-sm mb-4">From $110/night</p>
+            <button class="bg-gradient-to-r from-amber-400 to-yellow-500 text-slate-900 px-4 py-2 rounded-full font-medium flex items-center space-x-2 hover:scale-105 transition">
+              <span>Book Now</span>
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 3a1 1 0 011.707-.707l6 6a1 1 0 010 1.414l-6 6A1 1 0 0110 15v-3H4a1 1 0 010-2h6V3z"/></svg>
+            </button>
+          </div>
+        </a>
+
+        <a href="sage.html" class="block bg-slate-800/60 backdrop-blur-sm rounded-3xl overflow-hidden shadow-2xl border border-slate-700 hover:border-amber-400/50 transition hover:scale-105 group">
+          <div class="relative h-64 overflow-hidden">
+            <img src="15.jpeg" alt="Sage House" class="w-full h-full object-cover group-hover:scale-110 transition duration-700"/>
+          </div>
+          <div class="p-6">
+            <h3 class="text-white font-semibold text-xl mb-2 group-hover:text-amber-400 transition">Sage House</h3>
+            <p class="text-slate-400 text-sm mb-4">From $150/night</p>
+            <button class="bg-gradient-to-r from-amber-400 to-yellow-500 text-slate-900 px-4 py-2 rounded-full font-medium flex items-center space-x-2 hover:scale-105 transition">
+              <span>Book Now</span>
+              <svg class="w-4 h-4" fill="currentColor" viewBox="0 0 20 20"><path d="M10 3a1 1 0 011.707-.707l6 6a1 1 0 010 1.414l-6 6A1 1 0 0110 15v-3H4a1 1 0 010-2h6V3z"/></svg>
+            </button>
+          </div>
+        </a>
+
+      </div>
+    </div>
+  </main>
+
+ <!-- Footer Section -->
+    <footer class="bg-slate-900 text-slate-300 py-12 mt-20 border-t border-slate-800">
+      <div class="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
+        
+        <!-- Company Info -->
+        <div>
+          <h3 class="text-white text-lg font-semibold mb-4">Rafiki House</h3>
+          <p class="text-slate-400 text-sm leading-relaxed">
+            Where comfort meets nature. Experience handpicked vacation homes designed to give you warmth and lasting memories.
+          </p>
+        </div>
+
+        <!-- Quick Links -->
+        <div>
+          <h4 class="text-white text-sm font-semibold mb-4 uppercase tracking-wider">Quick Links</h4>
+          <ul class="space-y-2 text-sm">
+            <li><a href="#" class="hover:text-amber-400 transition-colors">Home</a></li>
+            <li><a href="#" class="hover:text-amber-400 transition-colors">Popular Homes</a></li>
+            <li><a href="#" class="hover:text-amber-400 transition-colors">Contact</a></li>
+            <li><a href="#" class="hover:text-amber-400 transition-colors">FAQs</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Info -->
+        <div>
+          <h4 class="text-white text-sm font-semibold mb-4 uppercase tracking-wider">Contact</h4>
+          <ul class="space-y-2 text-sm">
+            <li>Email: <a href="mailto:info@rafikihousenanyuki.com" class="hover:text-amber-400 transition-colors">info@rafikihousenanyuki.com</a></li>
+            <li>Phone: <a href="tel:+254705037373" class="hover:text-amber-400 transition-colors">+254 705037373</a></li>
+            <li>Location: Nanyuki, Kenya</li>
+          </ul>
+        </div>
+
+        <!-- Social Media -->
+        <div>
+          <h4 class="text-white text-sm font-semibold mb-4 uppercase tracking-wider">Follow Us</h4>
+          <div class="flex space-x-4">
+            <!-- WhatsApp -->
+            <a 
+              href="https://wa.me/254705037373" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="hover:text-green-400 transition-colors duration-300 transform hover:scale-110"
+              title="Contact us on WhatsApp"
+            >
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+              </svg>
+            </a>
+
+            <!-- Instagram -->
+            <a 
+              href="https://instagram.com/rafikihousenanyuki" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="hover:text-pink-400 transition-colors duration-300 transform hover:scale-110"
+              title="Follow us on Instagram"
+            >
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+              </svg>
+            </a>
+
+            <!-- Facebook -->
+            <a 
+              href="https://facebook.com/rafikihousenanyuki" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              class="hover:text-blue-400 transition-colors duration-300 transform hover:scale-110"
+              title="Follow us on Facebook"
+            >
+              <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Bottom bar -->
+      <div class="text-center text-sm text-slate-500 mt-10 border-t border-slate-800 pt-6">
+        © 2025 Rafiki House. All rights reserved.
+      </div>
+    </footer>
+  </div>
+</body>
+</html>
