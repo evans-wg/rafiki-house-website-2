@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Rafiki House Nanyuki</title>
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script> 
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script> 
+  <!-- Toastify for Feedback Toast -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastify-js/1.6.2/toastify.min.css"  />
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/toastify-js/1.6.2/toastify.min.js"></script> 
+</head>
+<body class="bg-gray-100 text-gray-900">
+
+ <!-- Hero Section -->
+<section 
+  class="relative min-h-screen flex items-center justify-center bg-cover bg-center bg-no-repeat"
+  style="background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('homes.jpeg');"
+>
+  <div class="container mx-auto px-4 text-center text-white">
+    <!-- Logo -->
+    <div class="mb-8">
+      <img 
+        src="logoo.jpeg" 
+        alt="Rafiki House Logo" 
+        class="mx-auto max-w-md w-full h-auto drop-shadow-2xl"
+      />
+    </div>
+
+    <!-- Hero Content -->
+    <div class="max-w-3xl mx-auto">
+      <h1 class="text-5xl md:text-6xl font-bold mb-6 text-white drop-shadow-lg">
+        Welcome to Rafiki House Nanyuki
+      </h1>
+      <p class="text-xl md:text-2xl mb-8 text-gray-100 drop-shadow-md">
+        A place of friends and family - where memories are made and hearts find home
+      </p>
+      <a href="#about" 
+         class="inline-block bg-gradient-to-r from-orange-500 to-red-500 hover:from-orange-600 hover:to-red-600 text-white font-semibold px-8 py-3 text-lg rounded-md transition-all duration-300 transform hover:scale-105 shadow-xl">
+        Experience Our Hospitality
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="py-20 bg-gradient-to-br from-teal-50 to-blue-50">
+  <div class="container mx-auto px-4">
+    <div class="max-w-4xl mx-auto text-center">
+      <h2 class="text-4xl font-bold mb-8 text-gray-800">About Rafiki House Nanyuki</h2>
+      <p class="text-lg text-gray-600 mb-12 leading-relaxed">
+        At Rafiki House Nanyuki, we believe in creating extraordinary experiences that bring people together. 
+        Our warm hospitality and attention to detail ensure that every moment spent with us becomes 
+        a cherished memory. Whether you're celebrating with friends or bonding with family, 
+        we provide the perfect atmosphere for life's most precious moments.
+      </p>
+
+      <div class="grid md:grid-cols-3 gap-8">
+        <!-- Card 1 -->
+        <div class="bg-white/80 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 p-6 rounded-lg">
+          <h3 class="text-teal-600 text-xl font-semibold mb-2">Warm Hospitality</h3>
+          <p class="text-gray-600">Experience genuine care and personalized service that makes you feel at home.</p>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white/80 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 p-6 rounded-lg">
+          <h3 class="text-orange-600 text-xl font-semibold mb-2">Family Focused</h3>
+          <p class="text-gray-600">Creating the perfect environment for families and friends to connect and celebrate.</p>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white/80 backdrop-blur-sm border-0 shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2 p-6 rounded-lg">
+          <h3 class="text-yellow-600 text-xl font-semibold mb-2">Memorable Experiences</h3>
+          <p class="text-gray-600">Every visit is crafted to create lasting memories that you'll treasure forever.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  <!-- Feedback Section -->
+  <section id="feedback" class="py-20 bg-gradient-to-br from-gray-900 to-gray-800">
+    <div class="container mx-auto px-4">
+      <div class="max-w-2xl mx-auto">
+        <h2 class="text-4xl font-bold text-center mb-4 text-white">Share Your Experience</h2>
+        <p class="text-center text-gray-300 mb-12 text-lg">
+          Your feedback helps us create even better experiences for all our guests
+        </p>
+        
+        <div class="bg-white/95 backdrop-blur-sm border-0 shadow-2xl rounded-xl overflow-hidden">
+          <div class="p-6">
+            <h3 class="text-2xl text-center text-gray-800 mb-6">Client Feedback</h3>
+            <form id="feedbackForm" class="space-y-6">
+              <div class="grid md:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-2">Full Name</label>
+                  <input
+                    type="text"
+                    placeholder="Your name"
+                    id="name"
+                    required
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:border-teal-500 focus:ring-teal-500 outline-none"
+                  />
+                </div>
+                <div>
+                  <label class="block text-sm font-medium text-gray-700 mb-2">Email Address</label>
+                  <input
+                    type="email"
+                    placeholder="your.email@example.com"
+                    id="email"
+                    required
+                    class="w-full px-4 py-2 border border-gray-300 rounded-md focus:border-teal-500 focus:ring-teal-500 outline-none"
+                  />
+                </div>
+              </div>
+              
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Rate Your Experience</label>
+                <div id="starRating" class="flex gap-1"></div>
+              </div>
+              
+              <div>
+                <label class="block text-sm font-medium text-gray-700 mb-2">Your Feedback</label>
+                <textarea
+                  placeholder="Tell us about your experience at Rafiki House..."
+                  id="message"
+                  required
+                  class="w-full min-h-32 px-4 py-2 border border-gray-300 rounded-md focus:border-teal-500 focus:ring-teal-500 outline-none"
+                ></textarea>
+              </div>
+              
+              <button
+              type="submit" value="Submit"
+                class="w-full bg-gradient-to-r from-teal-600 to-teal-700 hover:from-teal-700 hover:to-teal-800 text-white font-semibold py-3 text-lg transition-all duration-300 transform hover:scale-[1.02] shadow-lg rounded-md"
+              >
+                Submit Feedback
+              </button>
+            </form>
+
+            <p id="status"></p>
+
+ <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script> 
+<script>
+  (function () {
+    emailjs.init("4VbyzIsb8uhvH2oAf"); // Replace with your actual User ID
+  })();
+</script>
+
+<script>
+  document.getElementById("feedbackForm").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const name = document.getElementById("name").value;
+    const email = document.getElementById("email").value;
+    const message = document.getElementById("message").value;
+
+    // Optional: rating if implemented
+    const rating = 4; // replace with dynamic value if needed
+
+    emailjs.send("service_2u1wmpb", "template_exa2seg", {
+      name: name,
+      email: email,
+      message: message,
+      rating: rating // optional
+    })
+    .then(function(response) {
+      document.getElementById("status").innerHTML = "<span style='color:green;'>Thank you! Your feedback has been sent.</span>";
+    }, function(error) {
+      document.getElementById("status").innerHTML = "<span style='color:red;'>Oops! Something went wrong. Please try again.</span>";
+    });
+  });
+</script>
+    
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 bg-gradient-to-r from-teal-600 to-blue-600">
+    <div class="container mx-auto px-4">
+      <div class="max-w-4xl mx-auto text-center text-white">
+        <h2 class="text-3xl font-bold mb-8">Get In Touch</h2>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="flex flex-col items-center">
+            <i data-lucide="phone" class="w-8 h-8 mb-4 text-yellow-300"></i>
+            <h3 class="text-lg font-semibold mb-2">Call Us</h3>
+            <p class="text-teal-100">+254705037373</p>
+          </div>
+          <div class="flex flex-col items-center">
+            <i data-lucide="mail" class="w-8 h-8 mb-4 text-yellow-300"></i>
+            <h3 class="text-lg font-semibold mb-2">Email Us</h3>
+            <p class="text-teal-100">evansmugendi71@gmail.com.com</p>
+          </div>
+          
+<div class="flex flex-col items-center">
+  <a href="https://maps.app.goo.gl/ZgAi4ovMKsHJvftT9?g_st=aw" target="_blank" rel="noopener noreferrer" class="flex flex-col items-center text-teal-100 hover:underline text-center">
+    <i data-lucide="map-pin" class="w-8 h-8 mb-4 text-yellow-300"></i>
+    <h3 class="text-lg font-semibold mb-2 text-white">Visit Us</h3>
+    <p>
+      Nanyuki<br />Kenya
+    </p>
+  </a>
+</div>
+
+  <!-- Scripts -->
+  <script>
+    // Load Lucide icons
+    lucide.createIcons();
+
+    // Initialize star rating
+    const starContainer = document.getElementById('starRating');
+    let currentRating = 5;
+
+    function renderStars(rating) {
+      starContainer.innerHTML = '';
+      for (let i = 1; i <= 5; i++) {
+        const star = document.createElement('i');
+        star.setAttribute('data-lucide', 'star');
+        star.classList.add(
+          'w-6',
+          'h-6',
+          'cursor-pointer',
+          'transition-colors'
+        );
+        if (i <= rating) {
+          star.classList.add('fill-amber-400', 'text-amber-400');
+        } else {
+          star.classList.add('text-gray-300');
+        }
+
+        star.addEventListener('click', () => {
+          currentRating = i;
+          renderStars(i);
+        });
+
+        starContainer.appendChild(star);
+      }
+      lucide.createIcons();
+    }
+
+    renderStars(currentRating);
+
+    // Handle form submission
+    document.getElementById('feedbackForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      Toastify({
+        text: "Thank you for your feedback!",
+        duration: 3000,
+        close: true,
+        gravity: "top",
+        position: "center",
+        backgroundColor: "linear-gradient(to right, #06b6d4, #0d9488)",
+      }).showToast();
+
+      // Reset form fields
+      document.getElementById('name').value = '';
+      document.getElementById('email').value = '';
+      document.getElementById('message').value = '';
+      currentRating = 5;
+      renderStars(5);
+    });
+  </script>
+
+</body>
+</html>

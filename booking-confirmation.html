@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Booking Confirmation</title>
+  <meta name="description" content="Your booking confirmation at Rafiki Collection" />
+  <meta name="author" content="Rafiki Collection" />
+
+  <style>
+    body {
+      background-color: #0f172a;
+      color: #94a3b8;
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .layout {
+      max-width: 768px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+      min-height: 100vh;
+    }
+    .card {
+      background-color: rgba(30, 41, 59, 0.6);
+      backdrop-filter: blur(8px);
+      border: 1px solid #334155;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .card h1, .card h2, .card h3 {
+      color: #fbbf24;
+    }
+    .title {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .title h1 {
+      font-size: 2rem;
+      margin: 0.5rem 0;
+    }
+    .title p {
+      color: #94a3b8;
+    }
+    .icon {
+      display: inline-block;
+      font-size: 3rem;
+      color: #22c55e;
+    }
+    .grid {
+      display: grid;
+      gap: 1rem;
+    }
+    @media (min-width: 768px) {
+      .grid-cols-2 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .details-label {
+      font-weight: bold;
+      color: #ffffff;
+      margin-bottom: 0.25rem;
+    }
+    .details-value {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: #94a3b8;
+    }
+    .total {
+      background-color: rgba(51, 65, 85, 0.3);
+      padding: 1rem;
+      border-radius: 0.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .total span {
+      font-weight: bold;
+    }
+    .total .amount {
+      font-size: 1.5rem;
+      color: #fbbf24;
+    }
+    ul {
+      padding-left: 1.25rem;
+    }
+    li {
+      margin-bottom: 0.75rem;
+      display: flex;
+      align-items: flex-start;
+      gap: 0.5rem;
+    }
+    .footer {
+      text-align: center;
+    }
+    .footer p {
+      margin-bottom: 1rem;
+    }
+    .footer a {
+      color: hwb(266 14% 2%);
+      text-decoration: none;
+    }
+    .footer a:hover {
+      text-decoration: underline;
+    }
+    .button {
+      display: inline-flex;
+      align-items: center;
+      background: linear-gradient(to right, #fbbf24, #facc15);
+      color: #0f172a;
+      padding: 0.75rem 1.5rem;
+      border-radius: 0.5rem;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .button:hover {
+      background: linear-gradient(to right, #fcd34d, #fde68a);
+    }
+    .button .icon-left {
+      margin-right: 0.5rem;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="layout">
+    <!-- Confirmation Title -->
+    <div class="title">
+      <div class="icon">✅</div>
+      <h1>Booking Confirmed!</h1>
+      <p>Your reservation has been successfully processed.</p>
+    </div>
+
+    <!-- Booking Details -->
+    <div class="card">
+      <h2>Booking Details</h2>
+      <div class="grid grid-cols-2">
+        <div>
+          <h3 class="details-label">Property</h3>
+          <p class="details-value">📍 Rafiki House Nanyuki</p>
+        </div>
+        <div>
+          <h3 class="details-label">Booking ID</h3>
+          <p class="details-value"><code>#ABC123456</code></p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2" style="margin-top:1rem;">
+        <div>
+          <h3 class="details-label">Check-in</h3>
+          <p class="details-value">📅 2025-07-01</p>
+        </div>
+        <div>
+          <h3 class="details-label">Check-out</h3>
+          <p class="details-value">📅 2025-07-05</p>
+        </div>
+      </div>
+
+      <div class="grid grid-cols-2" style="margin-top:1rem;">
+        <div>
+          <h3 class="details-label">Guests</h3>
+          <p class="details-value">👥 2 guests</p>
+        </div>
+        <div>
+          <h3 class="details-label">Duration</h3>
+          <p class="details-value">4 nights</p>
+        </div>
+      </div>
+
+      <div class="total" style="margin-top:1rem;">
+        <span>Total Amount</span>
+        <span class="amount">$480</span>
+      </div>
+    </div>
+
+    <!-- What's Next -->
+    <div class="card">
+      <h2>What's Next?</h2>
+      <ul>
+        <li>✅ A confirmation email has been sent to your email address.</li>
+        <li>✅ Our team will contact you within 24 hours to confirm your booking.</li>
+        <li>✅ Check-in instructions will be provided closer to your arrival date.</li>
+      </ul>
+    </div>
+
+    <!-- Footer Actions -->
+    <div class="footer">
+      <p>Questions about your booking? Contact us at
+        <a href="tel:+254705037373">+254 705037373</a>
+      </p>
+      <a href="index.html" class="button">
+        <span class="icon-left">⬅️</span> Return Home
+      </a>
+    </div>
+  </div>
+</body>
+</html>
