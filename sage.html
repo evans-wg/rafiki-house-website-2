@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sage House - Rafiki Collection</title>
+  <meta name="description" content="Book Sage House in Nanyuki, Kenya. Enjoy beautiful amenities, relaxing spaces, and a memorable stay at Rafiki Collection." />
+  <meta name="author" content="Rafiki Collection" />
+
+  <meta property="og:title" content="Sage House - Rafiki Collection" />
+  <meta property="og:description" content="Book Sage House at Rafiki Collection in Nanyuki, Kenya." />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="1000.jpeg" />
+
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:site" content="@rafiki_collection" />
+  <meta name="twitter:image" content="1000.jpeg" />
+
+  <style>
+    body {
+      background-color: #0f172a;
+      color: #94a3b8;
+      font-family: sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .layout {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 3rem 1.5rem;
+    }
+    h1, h2 {
+      color: #fbbf24;
+    }
+    .title {
+      font-size: 2.5rem;
+      font-weight: bold;
+      margin-bottom: 1rem;
+    }
+    .location {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+    }
+    .grid {
+      display: grid;
+      gap: 2rem;
+    }
+    @media (min-width: 1024px) {
+      .grid-cols-3 {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      .col-span-2 {
+        grid-column: span 2 / span 2;
+      }
+    }
+    .gallery {
+      display: grid;
+      gap: 1rem;
+    }
+    @media (min-width: 768px) {
+      .gallery {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+    .gallery img {
+      width: 100%;
+      height: auto;
+      border-radius: 1rem;
+      transition: transform 0.3s;
+    }
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+    .card {
+      background-color: rgba(30, 41, 59, 0.6);
+      backdrop-filter: blur(8px);
+      border: 1px solid #334155;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .amenities {
+      display: grid;
+      gap: 1rem;
+    }
+    @media (min-width: 768px) {
+      .amenities {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+    .amenity {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    .amenity span:first-child {
+      color: #fbbf24;
+    }
+    .booking {
+      position: sticky;
+      top: 6rem;
+    }
+    .booking input, .booking button {
+      display: block;
+      width: 100%;
+      margin-bottom: 1rem;
+      padding: 0.75rem;
+      border: none;
+      border-radius: 0.5rem;
+    }
+    .booking input {
+      background: #1e293b;
+      color: #94a3b8;
+    }
+    .booking button {
+      background: linear-gradient(to right, #fbbf24, #facc15);
+      color: #0f172a;
+      font-weight: bold;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="layout">
+    <!-- Header -->
+    <div class="mb-8">
+      <h1 class="title">Sage House</h1>
+      <p class="location">📍 Nanyuki, Kenya</p>
+    </div>
+
+    <!-- Main Grid -->
+    <div class="grid grid-cols-3">
+      <!-- Left Column -->
+      <div class="col-span-2">
+        <!-- Gallery -->
+        <div class="gallery">
+          <img src="1000.jpeg" alt="Sage House 1">
+          <img src="1000.jpeg" alt="Sage House 2">
+          <img src="1000.jpeg" alt="Sage House 3">
+        </div>
+
+        <!-- Description Card -->
+        <div class="card">
+          <h2>About Sage House</h2>
+          <p>Primary gathering space featuring strategic seating arrangements, integrated entertainment systems, and optimized traffic flow for daily living and guest entertainment.</p>
+          <p>Private sanctuary designed for optimal rest, featuring quality bedding, adequate storage solutions, and thoughtful lighting controls to ensure restorative sleep and morning functionality.</p>
+          <p>Dedicated culinary space centered around a well-proportioned dining table, designed to facilitate memorable meals and meaningful conversations in a welcoming atmosphere.</p>
+        </div>
+
+        <!-- Amenities Card -->
+        <div class="card">
+          <h2>Amenities</h2>
+          <div class="amenities">
+            <div class="amenity"><span>📶</span> <span>Free Wi-Fi</span></div>
+            <div class="amenity"><span>🚗</span> <span>Free Parking</span></div>
+            <div class="amenity"><span>☕</span> <span>Kitchen</span></div>
+            <div class="amenity"><span>🍽️</span> <span>Dining Area</span></div>
+            <div class="amenity"><span>🛁</span> <span>Private Bathroom</span></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Booking Form -->
+      <div>
+        <div class="booking">
+          <div class="card">
+            <h2>Book Sage House</h2>
+            <form id="bookingForm">
+              <input type="text" id="name" placeholder="Your Name" required>
+              <input type="email" id="email" placeholder="Your Email" required>
+              <input type="date" id="checkin" placeholder="Check-in" required>
+              <input type="date" id="checkout" placeholder="Check-out" required>
+              <input type="number" id="guests" placeholder="Number of Guests" min="1" value="1" required>
+              <p>Price per night: $120</p>
+              <button type="submit">Book Now</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Booking Form Script -->
+  <script>
+    document.getElementById('bookingForm').addEventListener('submit', function(e) {
+      e.preventDefault();
+      const checkIn = document.getElementById('checkin').value;
+      const checkOut = document.getElementById('checkout').value;
+      const guests = document.getElementById('guests').value;
+
+      const oneDay = 24 * 60 * 60 * 1000;
+      const totalNights = Math.round((new Date(checkOut) - new Date(checkIn)) / oneDay);
+      const totalPrice = totalNights * 120;
+
+      const bookingData = {
+        houseName: 'Sage House',
+        checkIn: checkIn,
+        checkOut: checkOut,
+        guests: guests,
+        totalNights: totalNights,
+        totalPrice: totalPrice,
+        bookingId: 'RFK-' + Math.floor(Math.random() * 1000000),
+        confirmationDate: new Date().toISOString(),
+      };
+
+      localStorage.setItem('lastBooking', JSON.stringify(bookingData));
+      window.location.href = 'booking-confirmation.html';
+    });
+  </script>
+</body>
+</html>
