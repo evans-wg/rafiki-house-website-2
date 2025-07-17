@@ -80,9 +80,8 @@
 <header class="sticky top-0 z-50 px-4 sm:px-6 py-4 bg-slate-900/80 backdrop-blur border-b border-slate-800">
   <div class="max-w-7xl mx-auto flex items-center justify-between">
     <div class="flex items-center space-x-3">
-      <div class="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full bg-gradient-to-br from-amber-400 to-yellow-500 flex items-center justify-center ring-2 ring-amber-400">
-        <span class="text-slate-900 font-bold text-lg sm:text-2xl">R</span>
-      </div>
+      <img src="logo.jpeg" alt="Rafiki House Logo"
+           class="w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-full object-cover ring-2 ring-amber-400" />
       <span class="text-amber-400 font-bold text-lg sm:text-xl md:text-2xl tracking-tight">Rafiki House</span>
     </div>
     
@@ -101,7 +100,7 @@
     
     <!-- Desktop Right Side -->
     <div class="hidden md:flex items-center space-x-4">
-      <button class="text-slate-300 hover:text-amber-400 transition font-medium">Favourite</button>
+      <button class="text-slate-300 hover:text-amber-400 transition font-medium">Wishlist</button>
       <div class="w-8 h-8 bg-slate-700 rounded-full hover:bg-slate-600 transition"></div>
       <button class="p-2 hover:bg-slate-800 rounded-full transition" aria-label="Menu">
         <div class="w-4 h-4 grid grid-cols-3 gap-0.5">
@@ -540,7 +539,7 @@
 
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
       <!-- House Card Template -->
-      <a href="#" onclick="selectHouse('Amaranth House', 120)" class="block bg-slate-800/60 backdrop-blur-sm rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-slate-700 hover:border-amber-400/50 transition hover:scale-105 group">
+      <a href="amaranth.html" onclick="selectHouse('Amaranth House', 120)" class="block bg-slate-800/60 backdrop-blur-sm rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-slate-700 hover:border-amber-400/50 transition hover:scale-105 group">
         <div class="relative h-48 sm:h-64 overflow-hidden">
           <img src="Amaranth.jpeg" alt="Amaranth House" class="w-full h-full object-cover group-hover:scale-110 transition duration-700"/>
         </div>
@@ -555,7 +554,7 @@
       </a>
 
       <!-- Duplicate for each house -->
-      <a href="#" onclick="selectHouse('Citronella House', 130)" class="block bg-slate-800/60 backdrop-blur-sm rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-slate-700 hover:border-amber-400/50 transition hover:scale-105 group">
+      <a href="citronella.html" onclick="selectHouse('Citronella House', 130)" class="block bg-slate-800/60 backdrop-blur-sm rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-slate-700 hover:border-amber-400/50 transition hover:scale-105 group">
         <div class="relative h-48 sm:h-64 overflow-hidden">
           <img src="8.jpeg" alt="Citronella House" class="w-full h-full object-cover group-hover:scale-110 transition duration-700"/>
         </div>
@@ -570,7 +569,7 @@
       </a>
 
       <!-- Add the rest -->
-      <a href="#" onclick="selectHouse('Paprika House', 125)" class="block bg-slate-800/60 backdrop-blur-sm rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-slate-700 hover:border-amber-400/50 transition hover:scale-105 group">
+      <a href="paprika.html" onclick="selectHouse('Paprika House', 125)" class="block bg-slate-800/60 backdrop-blur-sm rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-slate-700 hover:border-amber-400/50 transition hover:scale-105 group">
         <div class="relative h-48 sm:h-64 overflow-hidden">
           <img src="16.jpeg" alt="Paprika House" class="w-full h-full object-cover group-hover:scale-110 transition duration-700"/>
         </div>
@@ -584,7 +583,7 @@
         </div>
       </a>
 
-      <a href="#" onclick="selectHouse('Oregano House', 140)" class="block bg-slate-800/60 backdrop-blur-sm rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-slate-700 hover:border-amber-400/50 transition hover:scale-105 group">
+      <a href="oregano.html" onclick="selectHouse('Oregano House', 140)" class="block bg-slate-800/60 backdrop-blur-sm rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-slate-700 hover:border-amber-400/50 transition hover:scale-105 group">
         <div class="relative h-48 sm:h-64 overflow-hidden">
           <img src="17.jpeg" alt="Oregano House" class="w-full h-full object-cover group-hover:scale-110 transition duration-700"/>
         </div>
@@ -598,7 +597,7 @@
         </div>
       </a>
 
-      <a href="#" onclick="selectHouse('Rosmarino House', 135)" class="block bg-slate-800/60 backdrop-blur-sm rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-slate-700 hover:border-amber-400/50 transition hover:scale-105 group">
+      <a href="rosmarino.html" onclick="selectHouse('Rosmarino House', 135)" class="block bg-slate-800/60 backdrop-blur-sm rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-slate-700 hover:border-amber-400/50 transition hover:scale-105 group">
         <div class="relative h-48 sm:h-64 overflow-hidden">
           <img src="11.jpeg" alt="Rosmarino House" class="w-full h-full object-cover group-hover:scale-110 transition duration-700"/>
         </div>
@@ -612,7 +611,7 @@
         </div>
       </a>
 
-      <a href="#" onclick="selectHouse('Ginger House', 110)" class="block bg-slate-800/60 backdrop-blur-sm rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-slate-700 hover:border-amber-400/50 transition hover:scale-105 group">
+      <a href="ginger.html" onclick="selectHouse('Ginger House', 110)" class="block bg-slate-800/60 backdrop-blur-sm rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-slate-700 hover:border-amber-400/50 transition hover:scale-105 group">
         <div class="relative h-48 sm:h-64 overflow-hidden">
           <img src="3.jpeg" alt="Ginger House" class="w-full h-full object-cover group-hover:scale-110 transition duration-700"/>
         </div>
@@ -626,7 +625,7 @@
         </div>
       </a>
 
-      <a href="#" onclick="selectHouse('Sage House', 150)" class="block bg-slate-800/60 backdrop-blur-sm rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-slate-700 hover:border-amber-400/50 transition hover:scale-105 group">
+      <a href="sage.html" onclick="selectHouse('Sage House', 150)" class="block bg-slate-800/60 backdrop-blur-sm rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-slate-700 hover:border-amber-400/50 transition hover:scale-105 group">
         <div class="relative h-48 sm:h-64 overflow-hidden">
           <img src="sage.jpeg" alt="Sage House" class="w-full h-full object-cover group-hover:scale-110 transition duration-700"/>
         </div>
