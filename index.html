@@ -740,27 +740,6 @@
   </div>
 </section>
 
-    <!-- Additional Features -->
-    <div class="mt-8 sm:mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
-      <div class="bg-slate-800/40 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-700/50 text-center">
-        <div class="text-amber-400 text-2xl mb-3">🌅</div>
-        <h4 class="text-white font-semibold mb-2">Sunrise & Sunset Tours</h4>
-        <p class="text-slate-400 text-sm">Witness magical moments as the African sun paints the sky</p>
-      </div>
-      <div class="bg-slate-800/40 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-700/50 text-center">
-        <div class="text-amber-400 text-2xl mb-3">📸</div>
-        <h4 class="text-white font-semibold mb-2">Photography Tours</h4>
-        <p class="text-slate-400 text-sm">Capture stunning wildlife and landscapes with expert guidance</p>
-      </div>
-      <div class="bg-slate-800/40 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-700/50 text-center sm:col-span-2 lg:col-span-1">
-        <div class="text-amber-400 text-2xl mb-3">🏕️</div>
-        <h4 class="text-white font-semibold mb-2">Bush Camping</h4>
-        <p class="text-slate-400 text-sm">Sleep under the stars in the heart of the wilderness</p>
-      </div>
-    </div>
-  </div>
-</section>
-
 <!-- Booking Section -->
 <section class="py-8 sm:py-16 px-4 sm:px-6">
   <div class="max-w-4xl mx-auto">
@@ -1147,6 +1126,98 @@
     });
   });
 </script>
+...
+<!-- Other HTML content -->
+<script>
+  // (<script>
+  // Show modal
+  function showGameDriveDetails() {
+    document.getElementById("gameDriveModal").classList.remove("hidden");
+  }
 
+  function showHikingDetails() {
+    document.getElementById("hikingModal").classList.remove("hidden");
+  }
+
+  // Close modal
+  function closeModal(modalId) {
+    document.getElementById(modalId).classList.add("hidden");
+  }
+
+  // --- GAME DRIVE FORM LOGIC ---
+  const gameDriveForm = document.getElementById("gameDriveBookingForm");
+  const gameDriveDestination = document.getElementById("gameDriveDestination");
+  const gameDriveGuests = document.getElementById("gameDriveGuests");
+  const gameDriveSummary = document.getElementById("gameDriveSummary");
+  const selectedDestination = document.getElementById("selectedDestination");
+  const selectedGuests = document.getElementById("selectedGuests");
+  const pricePerPerson = document.getElementById("pricePerPerson");
+  const totalAmount = document.getElementById("totalAmount");
+
+  gameDriveDestination.addEventListener("change", updateGameDriveSummary);
+  gameDriveGuests.addEventListener("input", updateGameDriveSummary);
+
+  function updateGameDriveSummary() {
+    const selectedOption = gameDriveDestination.options[gameDriveDestination.selectedIndex];
+    const price = parseInt(selectedOption.getAttribute("data-price") || 0);
+    const guests = parseInt(gameDriveGuests.value || 1);
+    
+    if (price > 0 && guests > 0) {
+      gameDriveSummary.classList.remove("hidden");
+      selectedDestination.textContent = selectedOption.text;
+      selectedGuests.textContent = guests;
+      pricePerPerson.textContent = `$${price}`;
+      totalAmount.textContent = `$${price * guests}`;
+    } else {
+      gameDriveSummary.classList.add("hidden");
+    }
+  }
+
+  gameDriveForm.addEventListener("submit", function(e) {
+    e.preventDefault();
+    alert("🎯 Your Game Drive booking has been submitted!");
+    gameDriveForm.reset();
+    gameDriveSummary.classList.add("hidden");
+    closeModal("gameDriveModal");
+  });
+
+  // --- HIKING FORM LOGIC ---
+  const hikingForm = document.getElementById("hikingBookingForm");
+  const hikingDestination = document.getElementById("hikingDestination");
+  const hikingGuests = document.getElementById("hikingGuests");
+  const hikingSummary = document.getElementById("hikingSummary");
+  const selectedHikingDestination = document.getElementById("selectedHikingDestination");
+  const selectedHikingGuests = document.getElementById("selectedHikingGuests");
+  const hikingPricePerPerson = document.getElementById("hikingPricePerPerson");
+  const hikingTotalAmount = document.getElementById("hikingTotalAmount");
+
+  hikingDestination.addEventListener("change", updateHikingSummary);
+  hikingGuests.addEventListener("input", updateHikingSummary);
+
+  function updateHikingSummary() {
+    const selectedOption = hikingDestination.options[hikingDestination.selectedIndex];
+    const price = parseInt(selectedOption.getAttribute("data-price") || 0);
+    const guests = parseInt(hikingGuests.value || 1);
+
+    if (price > 0 && guests > 0) {
+      hikingSummary.classList.remove("hidden");
+      selectedHikingDestination.textContent = selectedOption.text;
+      selectedHikingGuests.textContent = guests;
+      hikingPricePerPerson.textContent = `$${price}`;
+      hikingTotalAmount.textContent = `$${price * guests}`;
+    } else {
+      hikingSummary.classList.add("hidden");
+    }
+  }
+
+  hikingForm.addEventListener("submit", function(e) {
+    e.preventDefault();
+    alert("🏔️ Your Hiking Adventure booking has been submitted!");
+    hikingForm.reset();
+    hikingSummary.classList.add("hidden");
+    closeModal("hikingModal");
+  });
+</script>
+</script>
 </body>
 </html>
