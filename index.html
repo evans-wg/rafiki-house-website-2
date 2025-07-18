@@ -362,13 +362,13 @@
     <div class="text-center mb-8 sm:mb-12">
       <h2 class="text-2xl sm:text-3xl font-bold text-amber-400 mb-4">Game Drives & Hike by Rafiki</h2>
       <p class="text-slate-300 max-w-2xl mx-auto px-4">
-        Embark on unforgettable adventures with our expert guides through Kenya's spectacular wilderness
+        A warm welcome to the great border of Meru and Laikipia counties. You have set foot on the famous Nanyuki township - "mwisho wa reli". You are also on the slopes of the second highest mountain in Africa.
       </p>
     </div>
 
     <div class="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8">
       <!-- Game Drives Card -->
-      <div class="bg-slate-800/60 backdrop-blur-sm rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-slate-700 hover:border-amber-400/50 transition-all duration-500 hover:scale-105">
+      <button onclick="showGameDriveDetails()" class="block w-full text-left bg-slate-800/60 backdrop-blur-sm rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-slate-700 hover:border-amber-400/50 transition-all duration-500 hover:scale-105 cursor-pointer">
         <div class="relative h-48 sm:h-64 overflow-hidden">
           <img 
             src="safari.jpeg"
@@ -385,7 +385,7 @@
         <div class="p-4 sm:p-6">
           <h3 class="text-white font-semibold text-lg sm:text-xl mb-3">Safari Game Drives</h3>
           <p class="text-slate-400 text-sm mb-4">
-            Experience the thrill of spotting the Big Five and other magnificent wildlife in their natural habitat. Our experienced guides will take you on morning and evening game drives through Kenya's premier conservancies.
+            Explore Oljogi Conservancy, Olpejeta Conservancy, and day trips to Samburu (Mt. Ololokwe, Buffalo Springs). Experience the Big Five and magnificent wildlife in their natural habitat.
           </p>
           <div class="flex items-center justify-between mb-4 text-sm">
             <div class="flex items-center space-x-2">
@@ -399,15 +399,15 @@
           </div>
           <div class="flex items-center justify-between">
             <div class="text-amber-400 font-bold text-lg">$120/person</div>
-            <button class="bg-gradient-to-r from-amber-400 to-yellow-500 text-slate-900 px-4 py-2 rounded-full font-medium hover:scale-105 transition-transform duration-300">
-              Book Now
-            </button>
+            <span class="bg-gradient-to-r from-amber-400 to-yellow-500 text-slate-900 px-4 py-2 rounded-full font-medium">
+              Click for Details
+            </span>
           </div>
         </div>
-      </div>
+      </button>
 
       <!-- Hiking Card -->
-      <div class="bg-slate-800/60 backdrop-blur-sm rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-slate-700 hover:border-amber-400/50 transition-all duration-500 hover:scale-105">
+      <button onclick="showHikingDetails()" class="block w-full text-left bg-slate-800/60 backdrop-blur-sm rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl border border-slate-700 hover:border-amber-400/50 transition-all duration-500 hover:scale-105 cursor-pointer">
         <div class="relative h-48 sm:h-64 overflow-hidden">
           <img 
             src="mountain.jpeg"
@@ -422,9 +422,9 @@
           </div>
         </div>
         <div class="p-4 sm:p-6">
-          <h3 class="text-white font-semibold text-lg sm:text-xl mb-3">Mountain Hiking</h3>
+          <h3 class="text-white font-semibold text-lg sm:text-xl mb-3">Mountain Hiking & Adventures</h3>
           <p class="text-slate-400 text-sm mb-4">
-            Discover breathtaking trails around Mount Kenya and the Aberdare ranges. From gentle nature walks to challenging summit attempts, we offer hiking experiences for every fitness level.
+            Discover Mau Mau caves, Ngaredare forest and canopy walk, Aberdare forest, Mt. Kenya National Park, and Mt. Kenya animal orphanage. Adventures for every fitness level.
           </p>
           <div class="flex items-center justify-between mb-4 text-sm">
             <div class="flex items-center space-x-2">
@@ -438,13 +438,307 @@
           </div>
           <div class="flex items-center justify-between">
             <div class="text-amber-400 font-bold text-lg">$80/person</div>
-            <button class="bg-gradient-to-r from-amber-400 to-yellow-500 text-slate-900 px-4 py-2 rounded-full font-medium hover:scale-105 transition-transform duration-300">
-              Book Now
-            </button>
+            <span class="bg-gradient-to-r from-amber-400 to-yellow-500 text-slate-900 px-4 py-2 rounded-full font-medium">
+              Click for Details
+            </span>
+          </div>
+        </div>
+      </button>
+    </div>
+
+    <!-- Location Details Modals -->
+    <div id="gameDriveModal" class="hidden fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+      <div class="bg-slate-800 rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="p-6 sm:p-8">
+          <div class="flex justify-between items-center mb-6">
+            <h3 class="text-2xl font-bold text-amber-400">Game Drive Destinations</h3>
+            <button onclick="closeModal('gameDriveModal')" class="text-slate-400 hover:text-white text-2xl">&times;</button>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="space-y-4">
+              <div class="bg-slate-700/50 rounded-xl p-4">
+                <h4 class="text-amber-400 font-semibold mb-2">🦁 Oljogi Conservancy</h4>
+                <p class="text-slate-300 text-sm">Private conservancy offering intimate wildlife viewing with fewer crowds and exclusive game drives.</p>
+              </div>
+              
+              <div class="bg-slate-700/50 rounded-xl p-4">
+                <h4 class="text-amber-400 font-semibold mb-2">🐘 Olpejeta Conservancy</h4>
+                <p class="text-slate-300 text-sm">Home to the last two northern white rhinos and the largest black rhino sanctuary in East Africa.</p>
+              </div>
+              
+              <div class="bg-slate-700/50 rounded-xl p-4">
+                <h4 class="text-amber-400 font-semibold mb-2">🏔️ Day Trip to Samburu</h4>
+                <p class="text-slate-300 text-sm">Experience Mt. Ololokwe and Buffalo Springs with unique wildlife species like Grevy's zebra and reticulated giraffe.</p>
+              </div>
+            </div>
+            
+            <div class="space-y-4">
+              <img src="safari.jpeg" alt="Game Drive" class="w-full h-48 object-cover rounded-xl">
+              <div class="bg-slate-700/50 rounded-xl p-4">
+                <h4 class="text-amber-400 font-semibold mb-2">What to Expect</h4>
+                <ul class="text-slate-300 text-sm space-y-1">
+                  <li>• Big Five wildlife viewing</li>
+                  <li>• Professional safari guides</li>
+                  <li>• Morning and evening drives</li>
+                  <li>• Photography opportunities</li>
+                  <li>• Refreshments included</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Booking Form for Game Drives -->
+          <div class="mt-6 bg-slate-700/30 rounded-xl p-6">
+            <h4 class="text-amber-400 font-semibold text-lg mb-4">📅 Book Your Game Drive</h4>
+            <form id="gameDriveBookingForm" class="space-y-4">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-slate-300 mb-2 text-sm">Select Destination</label>
+                  <select id="gameDriveDestination" class="w-full bg-slate-700 border border-slate-600 p-3 rounded text-white" required>
+                    <option value="">Choose destination...</option>
+                    <option value="oljogi" data-price="120">Oljogi Conservancy - $120/person</option>
+                    <option value="olpejeta" data-price="150">Olpejeta Conservancy - $150/person</option>
+                    <option value="samburu" data-price="180">Samburu Day Trip - $180/person</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-slate-300 mb-2 text-sm">Number of Guests</label>
+                  <input type="number" id="gameDriveGuests" min="1" max="6" value="2" class="w-full bg-slate-700 border border-slate-600 p-3 rounded text-white" required>
+                </div>
+              </div>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-slate-300 mb-2 text-sm">Preferred Date</label>
+                  <input type="date" id="gameDriveDate" class="w-full bg-slate-700 border border-slate-600 p-3 rounded text-white" required>
+                </div>
+                <div>
+                  <label class="block text-slate-300 mb-2 text-sm">Time Preference</label>
+                  <select id="gameDriveTime" class="w-full bg-slate-700 border border-slate-600 p-3 rounded text-white" required>
+                    <option value="morning">Morning Safari (6:00 AM - 12:00 PM)</option>
+                    <option value="afternoon">Afternoon Safari (2:00 PM - 8:00 PM)</option>
+                    <option value="full-day">Full Day Safari (6:00 AM - 6:00 PM)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-slate-300 mb-2 text-sm">Your Name</label>
+                  <input type="text" id="gameDriveName" class="w-full bg-slate-700 border border-slate-600 p-3 rounded text-white" placeholder="Full Name" required>
+                </div>
+                <div>
+                  <label class="block text-slate-300 mb-2 text-sm">Contact Number</label>
+                  <input type="tel" id="gameDrivePhone" class="w-full bg-slate-700 border border-slate-600 p-3 rounded text-white" placeholder="+254 700 000 000" required>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-slate-300 mb-2 text-sm">Email Address</label>
+                <input type="email" id="gameDriveEmail" class="w-full bg-slate-700 border border-slate-600 p-3 rounded text-white" placeholder="your@email.com" required>
+              </div>
+
+              <div>
+                <label class="block text-slate-300 mb-2 text-sm">Special Requirements (Optional)</label>
+                <textarea id="gameDriveNotes" rows="3" class="w-full bg-slate-700 border border-slate-600 p-3 rounded text-white" placeholder="Any dietary restrictions, accessibility needs, or special requests..."></textarea>
+              </div>
+
+              <!-- Price Summary -->
+              <div id="gameDriveSummary" class="bg-slate-800/50 p-4 rounded-lg hidden">
+                <div class="flex justify-between items-center mb-2">
+                  <span class="text-slate-300">Destination:</span>
+                  <span id="selectedDestination" class="text-amber-400 font-semibold"></span>
+                </div>
+                <div class="flex justify-between items-center mb-2">
+                  <span class="text-slate-300">Guests:</span>
+                  <span id="selectedGuests" class="text-white"></span>
+                </div>
+                <div class="flex justify-between items-center mb-2">
+                  <span class="text-slate-300">Price per person:</span>
+                  <span id="pricePerPerson" class="text-white"></span>
+                </div>
+                <div class="border-t border-slate-600 pt-2 mt-2">
+                  <div class="flex justify-between items-center">
+                    <span class="text-amber-400 font-bold text-lg">Total Amount:</span>
+                    <span id="totalAmount" class="text-amber-400 font-bold text-lg"></span>
+                  </div>
+                </div>
+              </div>
+
+              <button type="submit" class="w-full bg-gradient-to-r from-amber-400 to-yellow-500 text-slate-900 py-3 rounded-full font-bold text-lg hover:scale-105 transition-transform duration-300">
+                🎯 Confirm Game Drive Booking
+              </button>
+            </form>
           </div>
         </div>
       </div>
     </div>
+
+    <div id="hikingModal" class="hidden fixed inset-0 bg-black/80 backdrop-blur-sm z-50 flex items-center justify-center p-4">
+      <div class="bg-slate-800 rounded-3xl max-w-4xl w-full max-h-[90vh] overflow-y-auto">
+        <div class="p-6 sm:p-8">
+          <div class="flex justify-between items-center mb-6">
+            <h3 class="text-2xl font-bold text-amber-400">Hiking & Adventure Destinations</h3>
+            <button onclick="closeModal('hikingModal')" class="text-slate-400 hover:text-white text-2xl">&times;</button>
+          </div>
+          
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div class="space-y-4">
+              <div class="bg-slate-700/50 rounded-xl p-4">
+                <h4 class="text-amber-400 font-semibold mb-2">🕳️ Mau Mau Caves</h4>
+                <p class="text-slate-300 text-sm">Historical caves used during Kenya's independence struggle, offering cultural insights and adventure.</p>
+              </div>
+              
+              <div class="bg-slate-700/50 rounded-xl p-4">
+                <h4 class="text-amber-400 font-semibold mb-2">🌲 Ngaredare Forest & Canopy Walk</h4>
+                <p class="text-slate-300 text-sm">Scenic forest trails with an exciting canopy walk offering breathtaking views of the forest.</p>
+              </div>
+              
+              <div class="bg-slate-700/50 rounded-xl p-4">
+                <h4 class="text-amber-400 font-semibold mb-2">🌿 Aberdare Forest</h4>
+                <p class="text-slate-300 text-sm">Pristine mountain forest with diverse wildlife and stunning waterfalls.</p>
+              </div>
+              
+              <div class="bg-slate-700/50 rounded-xl p-4">
+                <h4 class="text-amber-400 font-semibold mb-2">🏔️ Mt. Kenya National Park</h4>
+                <p class="text-slate-300 text-sm">Africa's second highest mountain with various hiking routes and unique alpine vegetation.</p>
+              </div>
+            </div>
+            
+            <div class="space-y-4">
+              <img src="mountain.jpeg" alt="Mountain Hiking" class="w-full h-48 object-cover rounded-xl">
+              <div class="bg-slate-700/50 rounded-xl p-4">
+                <h4 class="text-amber-400 font-semibold mb-2">🐾 Mt. Kenya Animal Orphanage</h4>
+                <p class="text-slate-300 text-sm">Rescue center for orphaned and injured wildlife, perfect for educational visits.</p>
+              </div>
+              <div class="bg-slate-700/50 rounded-xl p-4">
+                <h4 class="text-amber-400 font-semibold mb-2">What's Included</h4>
+                <ul class="text-slate-300 text-sm space-y-1">
+                  <li>• Expert mountain guides</li>
+                  <li>• Safety equipment</li>
+                  <li>• Packed lunch</li>
+                  <li>• Transportation</li>
+                  <li>• Entry fees</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          
+          <!-- Booking Form for Hiking -->
+          <div class="mt-6 bg-slate-700/30 rounded-xl p-6">
+            <h4 class="text-amber-400 font-semibold text-lg mb-4">🥾 Book Your Hiking Adventure</h4>
+            <form id="hikingBookingForm" class="space-y-4">
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-slate-300 mb-2 text-sm">Select Destination</label>
+                  <select id="hikingDestination" class="w-full bg-slate-700 border border-slate-600 p-3 rounded text-white" required>
+                    <option value="">Choose destination...</option>
+                    <option value="maumau" data-price="60">Mau Mau Caves - $60/person</option>
+                    <option value="ngaredare" data-price="80">Ngaredare Forest & Canopy Walk - $80/person</option>
+                    <option value="aberdare" data-price="100">Aberdare Forest - $100/person</option>
+                    <option value="mtkenya" data-price="120">Mt. Kenya National Park - $120/person</option>
+                    <option value="orphanage" data-price="50">Mt. Kenya Animal Orphanage - $50/person</option>
+                  </select>
+                </div>
+                <div>
+                  <label class="block text-slate-300 mb-2 text-sm">Number of Hikers</label>
+                  <input type="number" id="hikingGuests" min="1" max="8" value="2" class="w-full bg-slate-700 border border-slate-600 p-3 rounded text-white" required>
+                </div>
+              </div>
+              
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-slate-300 mb-2 text-sm">Preferred Date</label>
+                  <input type="date" id="hikingDate" class="w-full bg-slate-700 border border-slate-600 p-3 rounded text-white" required>
+                </div>
+                <div>
+                  <label class="block text-slate-300 mb-2 text-sm">Difficulty Level</label>
+                  <select id="hikingLevel" class="w-full bg-slate-700 border border-slate-600 p-3 rounded text-white" required>
+                    <option value="beginner">Beginner (Easy trails, 2-4 hours)</option>
+                    <option value="intermediate">Intermediate (Moderate trails, 4-6 hours)</option>
+                    <option value="advanced">Advanced (Challenging trails, 6-8 hours)</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div>
+                  <label class="block text-slate-300 mb-2 text-sm">Your Name</label>
+                  <input type="text" id="hikingName" class="w-full bg-slate-700 border border-slate-600 p-3 rounded text-white" placeholder="Full Name" required>
+                </div>
+                <div>
+                  <label class="block text-slate-300 mb-2 text-sm">Contact Number</label>
+                  <input type="tel" id="hikingPhone" class="w-full bg-slate-700 border border-slate-600 p-3 rounded text-white" placeholder="+254 700 000 000" required>
+                </div>
+              </div>
+
+              <div>
+                <label class="block text-slate-300 mb-2 text-sm">Email Address</label>
+                <input type="email" id="hikingEmail" class="w-full bg-slate-700 border border-slate-600 p-3 rounded text-white" placeholder="your@email.com" required>
+              </div>
+
+              <div>
+                <label class="block text-slate-300 mb-2 text-sm">Fitness Level & Medical Conditions</label>
+                <textarea id="hikingMedical" rows="3" class="w-full bg-slate-700 border border-slate-600 p-3 rounded text-white" placeholder="Please describe your fitness level and any medical conditions we should be aware of..." required></textarea>
+              </div>
+
+              <div>
+                <label class="block text-slate-300 mb-2 text-sm">Special Requirements (Optional)</label>
+                <textarea id="hikingNotes" rows="2" class="w-full bg-slate-700 border border-slate-600 p-3 rounded text-white" placeholder="Equipment rentals, dietary needs, photography focus areas..."></textarea>
+              </div>
+
+              <!-- Price Summary -->
+              <div id="hikingSummary" class="bg-slate-800/50 p-4 rounded-lg hidden">
+                <div class="flex justify-between items-center mb-2">
+                  <span class="text-slate-300">Destination:</span>
+                  <span id="selectedHikingDestination" class="text-amber-400 font-semibold"></span>
+                </div>
+                <div class="flex justify-between items-center mb-2">
+                  <span class="text-slate-300">Hikers:</span>
+                  <span id="selectedHikingGuests" class="text-white"></span>
+                </div>
+                <div class="flex justify-between items-center mb-2">
+                  <span class="text-slate-300">Price per person:</span>
+                  <span id="hikingPricePerPerson" class="text-white"></span>
+                </div>
+                <div class="border-t border-slate-600 pt-2 mt-2">
+                  <div class="flex justify-between items-center">
+                    <span class="text-amber-400 font-bold text-lg">Total Amount:</span>
+                    <span id="hikingTotalAmount" class="text-amber-400 font-bold text-lg"></span>
+                  </div>
+                </div>
+              </div>
+
+              <button type="submit" class="w-full bg-gradient-to-r from-amber-400 to-yellow-500 text-slate-900 py-3 rounded-full font-bold text-lg hover:scale-105 transition-transform duration-300">
+                🏔️ Confirm Hiking Adventure
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Additional Features -->
+    <div class="mt-8 sm:mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
+      <div class="bg-slate-800/40 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-700/50 text-center">
+        <div class="text-amber-400 text-2xl mb-3">🌅</div>
+        <h4 class="text-white font-semibold mb-2">Sunrise & Sunset Tours</h4>
+        <p class="text-slate-400 text-sm">Witness magical moments as the African sun paints the sky</p>
+      </div>
+      <div class="bg-slate-800/40 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-700/50 text-center">
+        <div class="text-amber-400 text-2xl mb-3">📸</div>
+        <h4 class="text-white font-semibold mb-2">Photography Tours</h4>
+        <p class="text-slate-400 text-sm">Capture stunning wildlife and landscapes with expert guidance</p>
+      </div>
+      <div class="bg-slate-800/40 backdrop-blur-sm rounded-xl sm:rounded-2xl p-4 sm:p-6 border border-slate-700/50 text-center sm:col-span-2 lg:col-span-1">
+        <div class="text-amber-400 text-2xl mb-3">🏕️</div>
+        <h4 class="text-white font-semibold mb-2">Bush Camping</h4>
+        <p class="text-slate-400 text-sm">Sleep under the stars in the heart of the wilderness</p>
+      </div>
+    </div>
+  </div>
+</section>
 
     <!-- Additional Features -->
     <div class="mt-8 sm:mt-12 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 sm:gap-6">
